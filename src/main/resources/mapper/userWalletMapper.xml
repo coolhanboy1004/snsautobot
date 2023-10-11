@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- userWalletMapper.xml -->
+<mapper namespace="UserWallet">
+    <insert id="save" parameterType="userwallet">
+        INSERT INTO user_wallet (nickname, wallet_address)
+        VALUES (#{nickname}, #{wallet_address})
+    </insert>
+    <select id="findByNickname" resultType="userwallet">
+        SELECT * FROM user_wallet WHERE nickname = #{nickname}
+    </select>
+</mapper>
