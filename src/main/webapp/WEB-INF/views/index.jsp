@@ -52,12 +52,13 @@
                 height: 80%;
             }
 
-        .close-btn {
-            position: absolute;
-            right: 10px;
-            top: 5px;
-            cursor: pointer;
-            font-size: 20px;
+            .close-btn {
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                cursor: pointer;
+                font-size: 20px;
+            }
         }
     </style>
 
