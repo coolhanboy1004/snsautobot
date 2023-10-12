@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -71,10 +73,12 @@ public class BlogTitleController {
     }
 
     @PostMapping("/register-wallet")
-    public String registerWallet(@RequestBody UserWalletDTO userWalletDTO) {
+    public ResponseEntity<?> registerWallet(@RequestBody UserWalletDTO userWalletDTO) {
+        if(userWalletService.isWalletExist(userWalletDTO.getWallet_address())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("지갑이 이미 등록되어 있습니다.");
+        }
         userWalletService.registerWallet(userWalletDTO);
-
-        return "Wallet registered successfully!";
+        return ResponseEntity.ok("Wallet registered successfully!");
     }
 
     @PostMapping("/check-nickname")
@@ -86,5 +90,12 @@ public class BlogTitleController {
         } else {
             return ResponseEntity.ok("닉네임 사용 가능");
         }
+    }
+
+    @GetMapping("/getWalletList")
+    public ResponseEntity<List<UserWalletDTO>> getWalletList() {
+        List<UserWalletDTO> wallets = userWalletService.findAllWallets();
+        System.out.println("Returned Wallets: " + wallets); // 서버 응답 로깅
+        return ResponseEntity.ok(wallets);
     }
 }

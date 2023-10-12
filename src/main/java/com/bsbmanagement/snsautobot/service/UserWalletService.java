@@ -5,6 +5,8 @@ import com.bsbmanagement.snsautobot.repository.UserWalletRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserWalletService {
@@ -16,5 +18,13 @@ public class UserWalletService {
 
     public boolean isNicknameExist(String nickname) {
         return userWalletRepository.findByNickname(nickname) != null;
+    }
+
+    public List<UserWalletDTO> findAllWallets() {
+        return userWalletRepository.findAll();
+    }
+
+    public boolean isWalletExist(String wallet_address) {
+        return userWalletRepository.isWalletExist(wallet_address);
     }
 }

@@ -46,10 +46,10 @@
         /* 모바일 환경에서의 스타일 */
         @media screen and (max-width: 768px) {
             #klipPopup {
-                top: 10%;
-                left: 5%;
-                width: 90%;
-                height: 80%;
+                top: 20%;
+                left: 10%;
+                width: 80%;
+                height: 50%;
             }
 
             .close-btn {
@@ -59,10 +59,82 @@
                 cursor: pointer;
                 font-size: 20px;
             }
+            /* 닉네임 입력 필드와 중복확인 버튼의 스타일 변경 */
+            .nickname-input {
+                display: flex;
+                flex-direction: column; /* 세로 방향으로 배치 */
+                gap: 10px;              /* 요소들 사이의 간격 */
+                margin: 50px 50px 50px 50px;
+                padding: 0px 0px 0px 0px;
+            }
+
+            /* 닉네임 입력 필드 크기 조정 */
+            #nickname {
+                width: 180px;      /* 입력 필드의 넓이 */
+                height: 30px;
+                padding: 0px;  /* 내부 패딩으로 텍스트와 테두리 간의 간격 설정 */
+                font-size: 10px; /* 텍스트 크기 */
+            }
+
+            /* 중복확인 버튼 크기 조정 */
+            #checkNickname {
+                width: 180px;      /* 입력 필드의 넓이 */
+                height: 30px;
+                padding: 0px; /* 버튼 내부의 패딩 */
+                font-size: 10px;    /* 버튼의 글자 크기 */
+            }
+
+            /* 지갑 등록하기 버튼 스타일 변경 (예: 배경색과 텍스트 색 변경) */
+            #klipAuthBtn {
+                background-color: #2c3e50; /* 버튼의 배경색 */
+                color: #ffffff;            /* 버튼의 글자색 */
+                padding: 10px 20px;        /* 버튼의 패딩 */
+                border: none;              /* 테두리 제거 */
+                border-radius: 5px;        /* 버튼의 모서리 둥글게 */
+                margin: 10px 50px 50px 50px;
+            }
+
+            #klipAuthBtn:hover {
+                background-color: #34495e; /* 버튼을 호버할 때의 배경색 */
+            }
+        }
+
+        /* 추가/수정 스타일 */
+        #walletList {
+            color: #ffffff; /* 글자색을 하얗게 */
+            font-size: 14px; /* 글자 크기 줄임 */
+            text-align: center; /* 글자를 중앙 정렬 */
+            list-style-type: decimal; /* 순서를 붙임 */
         }
     </style>
 
 </head>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "/getWalletList",
+            type: "GET",
+            success: function(data) {
+                console.log("Response Data:", data); // 응답 데이터 로깅
+                var walletList = data;
+                var listContent = "";
+
+                if (walletList && walletList.length) { // walletList가 있는지 확인
+                    walletList.forEach(function(wallet) {
+                        listContent += "<li>Nickname: " + wallet.nickname + ", Wallet Address: " + wallet.wallet_address + "</li>";
+                    });
+
+                    $("#walletList").html(listContent);
+                } else {
+                    console.warn("No wallets found or invalid data structure.");
+                }
+            },
+            error: function(error) {
+                console.error("Failed to fetch wallet data:", error);
+            }
+        });
+    });
+</script>
 
 <body>
 <!-- Page Preloder -->
@@ -129,6 +201,11 @@
 </header>
 <!-- Header End -->
 
+<h2>Wallet List:</h2>
+<ul id="walletList">
+    <!-- 지갑 데이터가 여기에 동적으로 삽입됩니다. -->
+</ul>
+
 <!-- Wallet Registration Popup -->
 <div id="klipPopup" style="display: none;">
     <span class="close-btn" id="closePopup">X</span>
@@ -144,6 +221,8 @@
     <button id="generateQR">클립 인증용 QR 코드 생성하기</button> <!-- QR 코드 생성 버튼 -->
     <button id="klipAuthBtn" style="display: none;">지갑 등록하기</button>
 </div>
+
+
 
 <script>
     function isMobile() {
@@ -165,11 +244,17 @@
 
                     // 지갑 주소와 닉네임을 백엔드에 전송
                     const nickname = document.getElementById("nickname").value;
-                    await axios.post("/register-wallet", { nickname: nickname, wallet_address: walletAddress });
 
-                    // 인증이 완료되면 팝업을 닫습니다.
-                    document.getElementById("klipPopup").style.display = "none";
-                    alert("등록이 완료되었습니다.");
+                    const registerResponse = await axios.post("/register-wallet", { nickname: nickname, wallet_address: walletAddress });
+
+                    if (registerResponse.data === "지갑이 이미 등록되어 있습니다.") {
+                        alert(registerResponse.data);
+                    } else {
+                        // 인증이 완료되면 팝업을 닫습니다.
+                        document.getElementById("klipPopup").style.display = "none";
+                        alert("등록이 완료되었습니다.");
+                    }
+
                 }
             } catch (pollingError) {
                 console.error("Failed to get Klip Auth result:", pollingError);
@@ -284,7 +369,6 @@
 </script>
 
 <!-- Js Plugins -->
-<script src="../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
 <script src="../resources/js/player.js"></script>
 <script src="../resources/js/jquery.nice-select.min.js"></script>

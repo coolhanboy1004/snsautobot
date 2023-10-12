@@ -11,4 +11,10 @@
     <select id="findByNickname" resultType="userwallet">
         SELECT * FROM user_wallet WHERE nickname = #{nickname}
     </select>
+    <select id="findAll" resultType="userwallet">
+        SELECT * FROM user_wallet
+    </select>
+    <select id="findByWalletAddress" resultType="userwallet">
+        SELECT * FROM user_wallet WHERE wallet_address = #{wallet_address}
+    </select>
 </mapper>
