@@ -29,73 +29,100 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <style>
+        /* 팝업 기본 스타일 */
         #klipPopup {
             position: fixed;
             top: 20%;
-            left: 30%;
+            left: 35%;
             width: 30%;
             height: 50%;
             background-color: #ffffff;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: 0px 0px 15px #aaa;
             z-index: 1001;
             overflow: auto;
+            text-align: center; /* 중앙 정렬 추가 */
+            font-family: 'Mulish', sans-serif; /* 폰트 적용 */
         }
-        /* 모바일 환경에서의 스타일 */
+
+        /* 닫기 버튼 스타일 */
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            bottom: 10px; /* top 속성을 bottom으로 변경 */
+            cursor: pointer;
+            font-size: 20px;
+            color: #999; /* 색상 변경 */
+        }
+
+        .close-btn:hover {
+            color: #333; /* 호버 시 색상 변경 */
+        }
+
+        /* 닉네임 입력 필드 스타일 */
+        .nickname-input {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        #nickname, #checkNickname {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border 0.3s;
+        }
+
+        #nickname:focus, #checkNickname:focus {
+            border: 1px solid #007BFF;
+            outline: none;
+        }
+
+        #checkNickname {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+        }
+
+        #checkNickname:hover {
+            background-color: #0056b3;
+        }
+
+        #nicknameStatus {
+            font-size: 12px;
+        }
+
+        /* QR 코드 생성 버튼 스타일 */
+        #generateQR {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2c3e50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block; /* 인라인 블록으로 설정 */
+        }
+
+        #generateQR:hover {
+            background-color: #34495e;
+        }
+
+        /* 모바일 환경 스타일 */
         @media screen and (max-width: 768px) {
+            .nickname-input {
+                margin-top: 30px; /* 모바일 환경에서의 상단 여백 추가 */
+            }
+
             #klipPopup {
                 top: 20%;
                 left: 10%;
                 width: 80%;
                 height: 50%;
-            }
-
-            .close-btn {
-                position: absolute;
-                right: 10px;
-                top: 5px;
-                cursor: pointer;
-                font-size: 20px;
-            }
-            /* 닉네임 입력 필드와 중복확인 버튼의 스타일 변경 */
-            .nickname-input {
-                display: flex;
-                flex-direction: column; /* 세로 방향으로 배치 */
-                gap: 10px;              /* 요소들 사이의 간격 */
-                margin: 50px 50px 50px 50px;
-                padding: 0px 0px 0px 0px;
-            }
-
-            /* 닉네임 입력 필드 크기 조정 */
-            #nickname {
-                width: 180px;      /* 입력 필드의 넓이 */
-                height: 30px;
-                padding: 0px;  /* 내부 패딩으로 텍스트와 테두리 간의 간격 설정 */
-                font-size: 10px; /* 텍스트 크기 */
-            }
-
-            /* 중복확인 버튼 크기 조정 */
-            #checkNickname {
-                width: 180px;      /* 입력 필드의 넓이 */
-                height: 30px;
-                padding: 0px; /* 버튼 내부의 패딩 */
-                font-size: 10px;    /* 버튼의 글자 크기 */
-            }
-
-            /* 지갑 등록하기 버튼 스타일 변경 (예: 배경색과 텍스트 색 변경) */
-            #klipAuthBtn {
-                background-color: #2c3e50; /* 버튼의 배경색 */
-                color: #ffffff;            /* 버튼의 글자색 */
-                padding: 10px 20px;        /* 버튼의 패딩 */
-                border: none;              /* 테두리 제거 */
-                border-radius: 5px;        /* 버튼의 모서리 둥글게 */
-                margin: 10px 50px 50px 50px;
-            }
-
-            #klipAuthBtn:hover {
-                background-color: #34495e; /* 버튼을 호버할 때의 배경색 */
             }
         }
 
@@ -219,7 +246,10 @@
     <br>
     <br>
     <button id="generateQR">클립 인증용 QR 코드 생성하기</button> <!-- QR 코드 생성 버튼 -->
-    <button id="klipAuthBtn" style="display: none;">지갑 등록하기</button>
+    <!-- 원래의 버튼을 이미지로 변경 -->
+    <button id="klipAuthBtn" style="background: none; border: none; display: none;">
+        <img src="../resources/img/button/clip_btn.png" alt="지갑등록하기" />
+    </button>
 </div>
 
 
@@ -357,6 +387,7 @@
     });
 
     document.getElementById("klipAuthBtn").addEventListener("click", function() {
+        const nickname = document.getElementById("nickname").value;
         if (!nickname) {
             alert("닉네임 중복확인후 지갑등록하기를 진행해주세요");
             return;
