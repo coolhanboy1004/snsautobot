@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -81,6 +82,14 @@ public class BlogTitleController {
         return ResponseEntity.ok("Wallet registered successfully!");
     }
 
+    @PostMapping("/check-wallet")
+    public ResponseEntity<?> checkWallet(@RequestBody UserWalletDTO userWalletDTO) {
+        if(userWalletService.isWalletExist(userWalletDTO.getWallet_address())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("지갑이 이미 등록되어 있습니다.");
+        }
+        return ResponseEntity.ok("지갑이 DB에 없습니다.");  // 메시지 수정
+    }
+
     @PostMapping("/check-nickname")
     public ResponseEntity<?> checkNickname(@RequestBody Map<String, String> request) {
         String nickname = request.get("nickname");
@@ -97,5 +106,18 @@ public class BlogTitleController {
         List<UserWalletDTO> wallets = userWalletService.findAllWallets();
         System.out.println("Returned Wallets: " + wallets); // 서버 응답 로깅
         return ResponseEntity.ok(wallets);
+    }
+
+    @PostMapping("/login-wallet")
+    public ResponseEntity<?> loginWithWallet(@RequestBody Map<String, String> request, HttpSession session) {
+        String nickname = request.get("nickname");
+        String wallet_address = request.get("wallet_address");
+
+        if (userWalletService.validateUserLogin(nickname, wallet_address)) {
+            session.setAttribute("loggedInUser", nickname); // 로그인된 사용자의 닉네임을 세션에 저장
+            return ResponseEntity.ok("로그인 성공");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인 실패: 잘못된 닉네임 또는 지갑 주소");
+        }
     }
 }

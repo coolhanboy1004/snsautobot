@@ -1,6 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
+
 <!DOCTYPE html>
 <html lang="zxx">
+
+<%
+    String loggedInUser = (String) session.getAttribute("loggedInUser");
+%>
 <!-- Header Section Begin -->
 <header class="header">
     <div class="container">
@@ -50,8 +56,14 @@
             </div>
             <div class="col-lg-2">
                 <div class="header__right">
-                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    <button id="walletIcon"><span class="icon_wallet"></span></button>
+                    <% if (loggedInUser != null) { %>
+                    <p style="color: white;">Welcome, <%= loggedInUser %>!</p>
+                    <a href="./logout.html" title="Logout"><span class="icon_logout" style="color: white;"></span></a>
+                    <% } else { %>
+                    <p><a href="./login.html" style="color: white;">로그인해주세요.</a></p>
+                    <a href="#" class="search-switch" style="color: white;"><span class="icon_search"></span></a>
+                    <button id="walletIcon" style="color: white;"><span class="icon_wallet"></span></button>
+                    <% } %>
                 </div>
             </div>
         </div>

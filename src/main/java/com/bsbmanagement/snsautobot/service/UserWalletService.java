@@ -27,4 +27,9 @@ public class UserWalletService {
     public boolean isWalletExist(String wallet_address) {
         return userWalletRepository.isWalletExist(wallet_address);
     }
+
+    public boolean validateUserLogin(String nickname, String wallet_address) {
+        UserWalletDTO user = userWalletRepository.findByNicknameAndWalletAddress(nickname, wallet_address);
+        return user != null;
+    }
 }
