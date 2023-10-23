@@ -4,12 +4,28 @@ function isMobile() {
 
 let requestKey;
 
+async function logoutUser() {
+    try {
+        const response = await axios.get('/logout'); // 로그아웃 요청 경로가 '/logout' 이라고 가정합니다.
+
+        if (response.data === "로그아웃 성공") {
+            alert("로그아웃에 성공했습니다.");
+            location.reload();
+        } else {
+            alert(response.data); // 실패 메시지 출력
+        }
+    } catch (error) {
+        console.error("Error during logout:", error);
+    }
+}
+
 async function loginUser(nickname, walletAddress) {
     try {
         const response = await axios.post('/login-wallet', { nickname: nickname, wallet_address: walletAddress });
 
         if (response.data === "로그인 성공") {
             alert("로그인에 성공했습니다.");
+            location.reload();
             // 필요한 경우 추가 작업 수행
         } else {
             alert(response.data); // 실패 메시지 출력
@@ -168,3 +184,4 @@ document.getElementById("klipAuthBtn").addEventListener("click", function() {
     window.location.href = deepLink;
     checkKlipAuthStatus();
 });
+
