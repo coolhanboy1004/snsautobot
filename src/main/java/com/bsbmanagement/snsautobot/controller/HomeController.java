@@ -30,4 +30,14 @@ public class HomeController {
     public String walletregistration() {
         return "walletregistration"; //=> walletregistration.jsp 출력
     }
+
+    @GetMapping("/memeberstatus")
+    public String memeberstatus() {
+        return "memeberstatus"; //=> walletregistration.jsp 출력
+    }
+
+    @GetMapping("/terms")
+    public String terms() {
+        return "terms"; //=> walletregistration.jsp 출력
+    }
 }
