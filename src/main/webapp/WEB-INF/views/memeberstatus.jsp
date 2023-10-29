@@ -29,7 +29,7 @@
     <script src="../resources/js/klipSDK-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <script src="../resources/js/wallet.js"></script>
@@ -48,9 +48,10 @@
             <table id="walletTable" class="table">
                 <thead>
                 <tr>
-                    <th>번호</th>
-                    <th>닉네임</th>
-                    <th>월렛 어드레스</th>
+                    <th>NO</th>
+                    <th>Nickname</th>
+                    <th>Wallet</th>
+                    <th>Token Balance</th>
                 </tr>
                 </thead>
                 <tbody>

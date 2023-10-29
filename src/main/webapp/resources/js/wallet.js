@@ -13,7 +13,8 @@ $(document).ready(function() {
                         "<tr>" +
                         "<td>" + (index + 1) + "</td>" +
                         "<td>" + wallet.nickname + "</td>" +
-                        "<td>" + wallet.wallet_address + "</td>" +
+                        "<td title='" + wallet.wallet_address + "'>" + wallet.wallet_address + "</td>" +
+                        "<td>" + "0" + "</td>" +
                         "</tr>"
                     );
                 });

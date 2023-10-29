@@ -62,6 +62,7 @@
                                     <li><a href="./categories.html">&nbsp;&nbsp;이미지</a></li>
                                     <li><a href="./anime-watching.html">&nbsp;&nbsp;텍스트</a></li>
                                     <li><a href="./signup.html">&nbsp;&nbsp;음원</a></li>
+                                    <li><a href="./signup.html">&nbsp;&nbsp;각종신청양식</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">정모<span class="arrow_carrot-down"></span></a>
