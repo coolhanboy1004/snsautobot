@@ -5,14 +5,18 @@ $(document).ready(function() {
         success: function(data) {
             console.log("Response Data:", data); // 응답 데이터 로깅
             var walletList = data;
-            var listContent = "";
+            var tableBody = $("#walletTable tbody");
 
-            if (walletList && walletList.length) { // walletList가 있는지 확인
-                walletList.forEach(function(wallet) {
-                    listContent += "<li>Nickname: " + wallet.nickname + ", Wallet Address: " + wallet.wallet_address + "</li>";
+            if (walletList && walletList.length) {
+                walletList.forEach(function(wallet, index) {
+                    tableBody.append(
+                        "<tr>" +
+                        "<td>" + (index + 1) + "</td>" +
+                        "<td>" + wallet.nickname + "</td>" +
+                        "<td>" + wallet.wallet_address + "</td>" +
+                        "</tr>"
+                    );
                 });
-
-                $("#walletList").html(listContent);
             } else {
                 console.warn("No wallets found or invalid data structure.");
             }

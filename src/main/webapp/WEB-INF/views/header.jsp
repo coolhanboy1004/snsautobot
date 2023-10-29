@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-2">
                 <div class="header__logo">
-                    <a href="./index.html">
+                    <a href="/memeberstatus">
                         <img src="../resources/img/logo.png" alt="">
                     </a>
                 </div>
@@ -22,16 +22,16 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">AI채널정보<span class="arrow_carrot-down"></span></a>
+                            <li class="active"><a href="/terms">AIWD정보<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
-                                    <li><a href="./categories.html">&nbsp;&nbsp;YOUTUBE</a></li>
-                                    <li><a href="./anime-details.html">&nbsp;&nbsp;블로그</a></li>
-                                    <li><a href="./anime-watching.html">&nbsp;&nbsp;사이트</a></li>
-                                    <li><a href="./blog-details.html">&nbsp;&nbsp;AI커뮤니티</a></li>
+                                    <li><a href="/terms">&nbsp;&nbsp;AIWD약관</a></li>
+                                    <li><a href="/memeberstatus">&nbsp;&nbsp;AIWD회원현황</a></li>
                                 </ul>
                             </li>
                             <li><a href="./categories.html">커뮤니티<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
+                                    <li><a href="#">&nbsp;&nbsp;채팅</a></li>
+                                    <li><a href="#">&nbsp;&nbsp;투표</a></li>
                                     <li><a href="./categories.html">&nbsp;&nbsp;자유게시판</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;갤러리</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;질문&답변</a></li>
@@ -40,8 +40,12 @@
                                     <li><a href="./blog-details.html">&nbsp;&nbsp;홍보</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">포럼<span class="arrow_carrot-down"></span></a>
+                            <li><a href="./blog.html">AI채널<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
+                                    <li><a href="./categories.html">&nbsp;&nbsp;YOUTUBE</a></li>
+                                    <li><a href="./anime-details.html">&nbsp;&nbsp;블로그</a></li>
+                                    <li><a href="./anime-watching.html">&nbsp;&nbsp;사이트</a></li>
+                                    <li><a href="./blog-details.html">&nbsp;&nbsp;AI커뮤니티</a></li>
                                     <li><a href="./categories.html">&nbsp;&nbsp;GPT</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;BARD</a></li>
                                     <li><a href="./anime-watching.html">&nbsp;&nbsp;실사이미지</a></li>
@@ -50,8 +54,21 @@
                                     <li><a href="./login.html">&nbsp;&nbsp;AI로봇</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/meetupschedule">정모일정</a></li>
-                            <li><a href="#">채팅</a></li>
+                            <li><a href="./blog.html">자료실<span class="arrow_carrot-down"></span></a>
+                                <ul class="dropdown">
+                                    <li><a href="./login.html">&nbsp;&nbsp;유틸리티</a></li>
+                                    <li><a href="./login.html">&nbsp;&nbsp;개발도구</a></li>
+                                    <li><a href="./login.html">&nbsp;&nbsp;모델</a></li>
+                                    <li><a href="./categories.html">&nbsp;&nbsp;이미지</a></li>
+                                    <li><a href="./anime-watching.html">&nbsp;&nbsp;텍스트</a></li>
+                                    <li><a href="./signup.html">&nbsp;&nbsp;음원</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog.html">정모<span class="arrow_carrot-down"></span></a>
+                                <ul class="dropdown">
+                                    <li><a href="/meetupschedule">&nbsp;&nbsp;정모일정</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
