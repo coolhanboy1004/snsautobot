@@ -33,7 +33,7 @@ public class BlogTitleController {
     @PostMapping("/generate-title")
     public String generateTitle(@RequestParam("title_subject") String titleSubject) throws Exception {
         // OpenAI API 호출 준비
-        String apiKey = "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";
+        String apiKey = "***********";
         URL url = new URL("https://api.openai.com/v1/completions");
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setRequestMethod("POST");
