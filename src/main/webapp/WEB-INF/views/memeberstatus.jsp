@@ -44,11 +44,12 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12">
-            <h5 class="mb-4">회원가입리스트</h5>
+            <h5 class="mb-4">Member status</h5>
             <table id="walletTable" class="table">
                 <thead>
                 <tr>
-                    <th>NO</th>
+                    <th>No</th>
+                    <th>RANKS</th> <!-- Icon 컬럼 추가 -->
                     <th>Nickname</th>
                     <th>Wallet</th>
                     <th>Token Balance</th>

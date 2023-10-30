@@ -200,6 +200,19 @@ ol {
 	padding: 12px 30px;
 }
 
+#addMeetupButton {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	font-weight: 700;
+	border: none;
+	border-radius: 2px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+}
+
 /* Preloder */
 
 #preloder {
@@ -2298,6 +2311,44 @@ ol {
 	.search-model-form input {
 		width: 100%;
 	}
+
+	/* 테이블 최적화 */
+	#walletTable {
+		font-size: 0.9em;  /* 테이블의 글자 크기 줄이기 */
+		width: 100%;
+		table-layout: fixed; /* 테이블 레이아웃을 고정으로 설정 */
+	}
+
+	#walletTable th, #walletTable td {
+		padding: 8px; /* 셀의 패딩 줄이기 */
+		overflow: hidden; /* 내용이 셀을 벗어날 경우 숨김 */
+		text-overflow: ellipsis; /* 내용이 셀을 벗어날 경우 ...로 표시 */
+		white-space: nowrap; /* 줄바꿈 방지 */
+	}
+
+	#walletTable th {
+		background: black;
+		color:white;
+		font-weight: bold; /* 헤더 글자 강조 */
+	}
+
+	/* "Wallet" 열(추정)의 너비 조절 */
+	#walletTable th:nth-child(1), #walletTable td:nth-child(1) {
+		width: 15%;  /* 셀의 너비를 20%로 설정. 필요에 따라 조절 가능 */
+	}
+	/* "Wallet" 열(추정)의 너비 조절 */
+	#walletTable th:nth-child(2), #walletTable td:nth-child(2) {
+		width: 20%;  /* 셀의 너비를 20%로 설정. 필요에 따라 조절 가능 */
+	}
+	/* "Wallet" 열(추정)의 너비 조절 */
+	#walletTable th:nth-child(3), #walletTable td:nth-child(3) {
+		width: 25%;  /* 셀의 너비를 20%로 설정. 필요에 따라 조절 가능 */
+	}
+
+	.rank-icon {
+		width: 50px;
+		height: 50px;
+	}
 }
 
 /* Small Device = 320px */
@@ -2366,4 +2417,10 @@ ol {
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}
+
+}
+
+.rank-icon {
+	width: 30px;
+	height: 30px;
 }

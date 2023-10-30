@@ -108,3 +108,68 @@
     text-align: left; /* 글자를 중앙 정렬 */
     list-style-type: decimal; /* 순서를 붙임 */
 }
+
+/* 팝업 기본 스타일 */
+#meetupPopup {
+    position: fixed;
+    top: 20px;
+    left: 35%;
+    width: 30%;
+    height: 80%;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px #aaa;
+    z-index: 1001;
+    overflow: auto;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+}
+
+.meetup-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#organizerNickname, #meetupName, #meetupDate, #meetupTime, #meetupLocationName, #meetupLocationUrl, #meetupCapacity, #meetupPrice {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border 0.3s;
+}
+
+#organizerNickname:focus, #meetupName:focus, #meetupDate:focus, #meetupTime:focus, #meetupLocationName:focus, #meetupLocationUrl:focus, #meetupCapacity:focus, #meetupPrice:focus {
+    border: 1px solid #007BFF;
+    outline: none;
+}
+
+#addMeetup {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#addMeetup:hover {
+    background-color: #0056b3;
+}
+
+
+/* 모바일 환경 스타일 */
+@media screen and (max-width: 768px) {
+    #meetupPopup {
+        top: 20%;
+        left: 10%;
+        width: 80%;
+        height: 70%;
+    }
+}
+
+

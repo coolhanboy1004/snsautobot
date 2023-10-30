@@ -30,7 +30,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
-<script src="../resources/js/wallet.js"></script>
 <body>
 <div id="preloder">
     <div class="loader"></div>
@@ -75,7 +74,7 @@
                                         <option value="">외부행사</option>
                                     </select>
                                     <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                                    <button class="site-btn">정모일정추가</button>
+                                    <button id="addMeetupButton">정모일정추가</button>
                                 </div>
                             </div>
                         </div>
@@ -495,13 +494,15 @@
     <!-- 지갑 데이터가 여기에 동적으로 삽입됩니다. -->
 </ul>
 
-
+<!-- Include the Wallet Registration Popup -->
+<jsp:include page="popup/add_meetup_popup.jsp" />
 
 <!-- Include the Wallet Registration Popup -->
 <jsp:include page="popup/wallet_login_popup.jsp" />
 
 
 <script src="../resources/js/wallet_login.js"></script>
+<script src="../resources/js/addmeetup.js"></script>
 <!-- Js Plugins -->
 <script src="../resources/js/bootstrap.min.js"></script>
 <script src="../resources/js/player.js"></script>
@@ -510,6 +511,7 @@
 <script src="../resources/js/jquery.slicknav.js"></script>
 <script src="../resources/js/owl.carousel.min.js"></script>
 <script src="../resources/js/main.js"></script>
+
 
 
 </body>

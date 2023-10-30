@@ -65,7 +65,7 @@
                                     <li><a href="./signup.html">&nbsp;&nbsp;각종신청양식</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">정모<span class="arrow_carrot-down"></span></a>
+                            <li><a href="/meetupschedule">정모<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="/meetupschedule">&nbsp;&nbsp;정모일정</a></li>
                                 </ul>
