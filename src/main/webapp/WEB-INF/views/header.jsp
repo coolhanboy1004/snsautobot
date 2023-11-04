@@ -7,6 +7,9 @@
 <%
     String loggedInUser = (String) session.getAttribute("loggedInUser");
 %>
+<script>
+    var loggedInUserNickname = '<%= loggedInUser %>';
+</script>
 <!-- Header Section Begin -->
 <header class="header">
     <div class="container">

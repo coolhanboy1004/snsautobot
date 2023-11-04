@@ -69,10 +69,12 @@
     font-size: 12px;
 }
 
-/* QR 코드 생성 버튼 스타일 */
 #generateQR {
-    position: relative; /* 또는 absolute, fixed 등 다른 값을 사용할 수 있습니다. */
-    left: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -80,8 +82,9 @@
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
-    display: inline-block; /* 인라인 블록으로 설정 */
+    display: inline-block;
 }
+
 
 #generateQR:hover {
     background-color: #34495e;

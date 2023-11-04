@@ -494,9 +494,34 @@
     <!-- 지갑 데이터가 여기에 동적으로 삽입됩니다. -->
 </ul>
 
-<!-- Include the Wallet Registration Popup -->
-<jsp:include page="popup/add_meetup_popup.jsp" />
+<%--
+  Created by IntelliJ IDEA.
+  User: a
+  Date: 2023-10-21
+  Time: 오후 4:55
+  To change this template use File | Settings | File Templates.
+--%>
 
+<div id="meetupPopup" style="display: none;">
+    <span class="close-btn" id="closeMeetupPopup">닫기</span>
+    <div class="meetup-input">
+        <!-- 이미지 업로드 -->
+        <input type="file" id="photo" name="photo" />
+        <!-- Hidden input to store organizer's nickname -->
+        <input type="text" id="organizerNickname" name="organizerNickname" />
+        <input type="text" id="name" name="name" placeholder="정모 이름을 입력하세요." />
+        <input type="date" id="date" name="date" placeholder="날짜를 선택하세요." />
+        <input type="time" id="time" name="time" placeholder="시간을 선택하세요." />
+        <input type="number" id="price" name="price" placeholder="가격을 입력하세요." step="0.01" />
+        <input type="text" id="locationName" name="locationName" placeholder="장소 이름을 입력하세요." />
+        <input type="text" id="locationUrl" name="locationUrl" placeholder="장소 URL을 입력하세요." />
+        <input type="number" id="capacity" name="capacity" placeholder="정모 인원을 입력하세요." />
+    </div>
+    <button id="addMeetup">정모일정 추가하기</button>
+</div>
+<script>
+    console.log(loggedInUserNickname);
+</script>
 <!-- Include the Wallet Registration Popup -->
 <jsp:include page="popup/wallet_login_popup.jsp" />
 
