@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Meetup">
+    <insert id="save" parameterType="meetup">
+        INSERT INTO meetups (organizer_nickname, photo, name, date, time, price, location_name, location_url, capacity)
+        VALUES (#{organizerNickname}, #{photoPath}, #{name}, #{date}, #{time}, #{price}, #{locationName}, #{locationUrl}, #{capacity})
+    </insert>
+    <select id="findByName" resultType="meetup">
+        SELECT * FROM meetups WHERE name = #{name}
+    </select>
+    <select id="findAll" resultType="meetup">
+        SELECT * FROM meetups
+    </select>
+</mapper>
