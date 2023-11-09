@@ -17,7 +17,7 @@ document.getElementById("closeMeetupPopup").addEventListener("click", function()
 
 document.getElementById("addMeetup").addEventListener("click", async function() {
     const organizerNickname = document.getElementById("organizerNickname").value;
-    const meetupPhoto = document.getElementById("photo").files[0];  // File input
+    const meetupPhoto = document.getElementById("photo").files[0]; // 파일 입력
     const meetupName = document.getElementById("name").value;
     const meetupDate = document.getElementById("date").value;
     const meetupTime = document.getElementById("time").value;
@@ -25,6 +25,23 @@ document.getElementById("addMeetup").addEventListener("click", async function() 
     const meetupLocationName = document.getElementById("locationName").value;
     const meetupLocationUrl = document.getElementById("locationUrl").value;
     const meetupCapacity = document.getElementById("capacity").value;
+
+    let missingFields = [];
+    if (!organizerNickname) missingFields.push("주최자 별명");
+    if (!meetupPhoto) missingFields.push("밋업 사진");
+    if (!meetupName) missingFields.push("밋업 이름");
+    if (!meetupDate) missingFields.push("밋업 날짜");
+    if (!meetupTime) missingFields.push("밋업 시간");
+    if (!meetupPrice) missingFields.push("밋업 가격");
+    if (!meetupLocationName) missingFields.push("밋업 장소 이름");
+    if (!meetupLocationUrl) missingFields.push("밋업 장소 URL");
+    if (!meetupCapacity) missingFields.push("밋업 정원");
+
+    // 비어 있는 필드가 있으면 사용자에게 알림
+    if (missingFields.length > 0) {
+        alert("다음 데이터가 비어있습니다: " + missingFields.join(", ") + ". 모두 입력해 주세요.");
+        return; // 필요한 필드를 모두 채우지 않으면 여기에서 함수 실행을 멈춥니다.
+    }
 
     const formattedMeetupTime = meetupTime + ":00";
 

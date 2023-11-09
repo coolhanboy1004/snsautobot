@@ -16,6 +16,16 @@
     font-family: 'Mulish', sans-serif; /* 폰트 적용 */
 }
 
+#qrcode {
+    position: absolute;
+    left: 55%;
+    top: 60%;
+    transform: translateX(-50%);
+    width: 200px; /* or whatever width you want */
+    height: 200px; /* or whatever height you want, make sure it's square for a QR code */
+    /* Rest of your styles */
+}
+
 .close-btn {
     position: absolute;
     right: 10px;

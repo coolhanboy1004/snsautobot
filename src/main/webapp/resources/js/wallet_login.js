@@ -105,9 +105,7 @@ document.getElementById("walletIcon").addEventListener("click", async function()
             if (isMobile()) {
                 document.getElementById("klipAuthBtn").style.display = "block";
                 document.getElementById("generateQR").style.display = "none";
-                document.getElementById("pcOnlyText").style.display = "none";
             } else {
-                document.getElementById("pcOnlyText").style.display = "block";
                 document.getElementById("generateQR").style.display = "block";
             }
         } else {
