@@ -40,4 +40,14 @@ public class HomeController {
     public String terms() {
         return "terms"; //=> walletregistration.jsp 출력
     }
+
+    @GetMapping("/imagedetail")
+    public String imagedetail() {
+        return "imagedetail"; //=> imagedetail.jsp 출력
+    }
+
+    @GetMapping("/imagegallery")
+    public String imagegallery() {
+        return "imagegallery"; //=> imagedetail.jsp 출력
+    }
 }
