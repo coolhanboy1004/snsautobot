@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Wallet Registration Popup -->
 <div id="klipPopup" style="display: none;">
     <span class="close-btn" id="closePopup">닫기</span>
@@ -19,8 +20,10 @@
     <button id="generateQR">클립 인증용 QR 코드 생성하기
     </button>
     <div id="qrcode"></div>
-    <button id="klipAuthBtn" style="background: none; border: none; display: none;">
-        <img src="../resources/img/button/clip_btn.png" alt="지갑등록또는연결" />
-    </button>
+    <div class="klipAuthBtn-wrapper"> <!-- 추가된 div 태그 -->
+        <button id="klipAuthBtn" style="background: none; border: none; display: none;">
+            <img src="../resources/img/button/clip_btn.png" alt="지갑등록또는연결" />
+        </button>
+    </div>
 </div>
 

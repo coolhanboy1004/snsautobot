@@ -972,7 +972,7 @@ ol {
 	text-align: right;
 	display: flex; /* Add flex display */
 	align-items: center; /* Vertically align items */
-	margin-left:60px;
+	margin-left:300px;
 }
 
 /* 모바일 화면에서의 스타일 */

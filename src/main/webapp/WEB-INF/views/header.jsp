@@ -36,7 +36,7 @@
                                     <li><a href="#">&nbsp;&nbsp;채팅</a></li>
                                     <li><a href="#">&nbsp;&nbsp;투표</a></li>
                                     <li><a href="./categories.html">&nbsp;&nbsp;자유게시판</a></li>
-                                    <li><a href="./anime-details.html">&nbsp;&nbsp;갤러리</a></li>
+                                    <li><a href="./imagegallery">&nbsp;&nbsp;갤러리</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;질문&답변</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;회원사진</a></li>
                                     <li><a href="./anime-watching.html">&nbsp;&nbsp;가입인사</a></li>

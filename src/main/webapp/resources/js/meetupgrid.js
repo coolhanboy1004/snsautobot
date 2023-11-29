@@ -79,7 +79,7 @@ $(document).ready(function() {
 
             // Sort the meetups by date in descending order
             meetupsList.sort(function(a, b) {
-                return new Date(b.date) - new Date(a.date);
+                return b.id - a.id;
             });
 
             // 현재 문서의 기본 URL을 가져옵니다.

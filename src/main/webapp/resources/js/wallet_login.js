@@ -79,7 +79,6 @@ function checkKlipAuthStatus() {
     }, 2000); // 2초마다 확인
 }
 
-// 팝업 열기
 document.getElementById("walletIcon").addEventListener("click", async function() {
     const KLIP_PREPARE_URL = "https://a2a-api.klipwallet.com/v2/a2a/prepare";
     const bappName = 'AIWD';
@@ -104,7 +103,16 @@ document.getElementById("walletIcon").addEventListener("click", async function()
 
             if (isMobile()) {
                 document.getElementById("klipAuthBtn").style.display = "block";
-                document.getElementById("generateQR").style.display = "none";
+
+                // generateQR 버튼과 qrcode div 요소 제거
+                const generateQRButton = document.getElementById("generateQR");
+                const qrCodeDiv = document.getElementById("qrcode");
+                if (generateQRButton) {
+                    generateQRButton.parentNode.removeChild(generateQRButton);
+                }
+                if (qrCodeDiv) {
+                    qrCodeDiv.parentNode.removeChild(qrCodeDiv);
+                }
             } else {
                 document.getElementById("generateQR").style.display = "block";
             }
