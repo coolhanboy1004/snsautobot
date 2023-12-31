@@ -2,6 +2,7 @@ package com.bsbmanagement.snsautobot.service;
 
 import com.bsbmanagement.snsautobot.dto.ImageGalleryDTO;
 import com.bsbmanagement.snsautobot.repository.ImageGalleryRepository;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,13 @@ public class ImageGalleryService {
     public int saveImageGallery(ImageGalleryDTO imageGalleryDTO) {
         return imageGalleryRepository.save(imageGalleryDTO);
     }
+
+    // 비동기 메소드 추가
+    @Async
+    public void saveImageGalleryAsync(ImageGalleryDTO imageGalleryDTO) {
+        imageGalleryRepository.save(imageGalleryDTO);
+    }
+
 
     public ImageGalleryDTO getImageById(int imgId) {
         return imageGalleryRepository.findById(imgId);

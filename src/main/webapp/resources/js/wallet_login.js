@@ -41,7 +41,7 @@ async function registerAndLoginUser(nickname, walletAddress) {
         const response = await axios.post('/check-wallet', { wallet_address: walletAddress });
 
         // 지갑 주소가 DB에 없으면 등록
-        if (response.status === 200 && response.data === "Wallet registered successfully!") {
+        if (response.status === 200 && response.data === "지갑이 DB에 없습니다.") {
             await axios.post("/register-wallet", { nickname: nickname, wallet_address: walletAddress });
             alert("지갑 주소가 등록되었습니다.");
         }

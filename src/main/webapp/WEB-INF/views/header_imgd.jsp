@@ -17,7 +17,6 @@
             <div class="col-lg-2">
                 <div class="header__logo">
                     <a href="/memeberstatus">
-                        <img src="../resources/img/logo.png" alt="">
                     </a>
                 </div>
             </div>
@@ -55,17 +54,6 @@
                                     <li><a href="./blog-details.html">&nbsp;&nbsp;애니이미지</a></li>
                                     <li><a href="./signup.html">&nbsp;&nbsp;AI음성</a></li>
                                     <li><a href="./login.html">&nbsp;&nbsp;AI로봇</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">마켓<span class="arrow_carrot-down"></span></a>
-                                <ul class="dropdown">
-                                    <li><a href="./login.html">&nbsp;&nbsp;강의</a></li>
-                                    <li><a href="./categories.html">&nbsp;&nbsp;GPT각종봇</a></li>
-                                    <li><a href="./blog-details.html">&nbsp;&nbsp;프롬프트</a></li>
-                                    <li><a href="./anime-watching.html">&nbsp;스마트기기</a></li>
-                                    <li><a href="./anime-details.html">&nbsp;&nbsp;NFT컨텐츠</a></li>
-                                    <li><a href="./anime-watching.html">&nbsp;&nbsp;로봇</a></li>
-                                    <li><a href="./signup.html">&nbsp;&nbsp;서적</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">자료실<span class="arrow_carrot-down"></span></a>

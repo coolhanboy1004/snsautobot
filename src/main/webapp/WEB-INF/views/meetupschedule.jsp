@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Anime Template">
-    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="description" content="AIWD">
+    <meta name="keywords" content="AI, GPT, DALLE, Stable-diffusion">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AIWD</title>
@@ -56,7 +56,7 @@
 <section class="product-page spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="product__page__content">
                     <div class="product__page__title">
                         <div class="row">

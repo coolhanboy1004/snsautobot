@@ -55,10 +55,10 @@
         display: block; /* 모바일 환경에서만 보여짐 */
         /* 필요에 따라 위치 조정 등의 스타일 추가 */
         position: absolute;
-        left: 80%;
-        top: 55%;
+        left: 68%;
+        top: 60%;
         transform: translateX(-50%);
-        width: 500px; /* or whatever width you want */
+        width: 400px; /* or whatever width you want */
         height: 80px; /* or whatever height you want, make sure it's square for a QR code */
     }
 }
