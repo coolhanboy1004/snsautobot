@@ -56,7 +56,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                    <a href="./categories.html">AI이미지갤러리</a>
+                    <a href="./categories.html">AI RPG GAME</a>
                 </div>
             </div>
         </div>
@@ -74,26 +74,14 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-sm-5">
                                 <div class="section-title">
-                                    <h4>AI이미지갤러리</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-sm-7">
-                                <div class="product__page__filter">
-                                    <p>분류:</p>
-                                    <select>
-                                        <option value="">나비</option>
-                                        <option value="">SD</option>
-                                        <option value="">미드저니</option>
-                                    </select>
-                                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                                    <button id="addMeetupButton">새이미지추가</button>
+                                    <h4>AI RPG GAME</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="imageGrid">
+                   <%-- <div class="row" id="imageGrid">
                         <!-- 여기에 밋업 정보가 동적으로 추가될 것입니다. -->
-                    </div>
+                    </div>--%>
                 </div>
                 <div class="product__pagination" id="pagination"></div>
             </div>

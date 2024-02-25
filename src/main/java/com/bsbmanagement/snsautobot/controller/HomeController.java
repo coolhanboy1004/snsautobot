@@ -50,4 +50,14 @@ public class HomeController {
     public String imagegallery() {
         return "imagegallery"; //=> imagedetail.jsp 출력
     }
+
+    @GetMapping("/airpggame")
+    public String airpggame() {
+        return "airpggame"; //=> imagedetail.jsp 출력
+    }
+
+    @GetMapping("/gptstore")
+    public String gptstore() {
+        return "gptstore"; //=> gptstore.jsp 출력
+    }
 }

@@ -29,11 +29,13 @@
                                 <ul class="dropdown">
                                     <li><a href="/terms">&nbsp;&nbsp;AIWD약관</a></li>
                                     <li><a href="/memeberstatus">&nbsp;&nbsp;AIWD회원현황</a></li>
+                                    <li><a href="https://ayaans-organization.gitbook.io/aiwdwhitepaper/">&nbsp;&nbsp;AIWD토큰백서</a></li>
                                 </ul>
                             </li>
                             <li><a href="./categories.html">커뮤니티<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="#">&nbsp;&nbsp;채팅</a></li>
+                                    <li><a href="/airpggame">&nbsp;&nbsp;AIRPGGAME</a></li>
                                     <li><a href="#">&nbsp;&nbsp;투표</a></li>
                                     <li><a href="./categories.html">&nbsp;&nbsp;자유게시판</a></li>
                                     <li><a href="./imagegallery">&nbsp;&nbsp;갤러리</a></li>
@@ -49,18 +51,19 @@
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;블로그</a></li>
                                     <li><a href="./anime-watching.html">&nbsp;&nbsp;사이트</a></li>
                                     <li><a href="./blog-details.html">&nbsp;&nbsp;AI커뮤니티</a></li>
-                                    <li><a href="./categories.html">&nbsp;&nbsp;GPT</a></li>
-                                    <li><a href="./anime-details.html">&nbsp;&nbsp;BARD</a></li>
-                                    <li><a href="./anime-watching.html">&nbsp;&nbsp;실사이미지</a></li>
-                                    <li><a href="./blog-details.html">&nbsp;&nbsp;애니이미지</a></li>
-                                    <li><a href="./signup.html">&nbsp;&nbsp;AI음성</a></li>
-                                    <li><a href="./login.html">&nbsp;&nbsp;AI로봇</a></li>
+                                    <li><a href="./blog-details.html">&nbsp;&nbsp;AI뉴스</a></li>
+                                    <li><a href="./categories.html">&nbsp;&nbsp;텍스트</a></li>
+                                    <li><a href="./anime-details.html">&nbsp;&nbsp;이미지</a></li>
+                                    <li><a href="./anime-watching.html">&nbsp;&nbsp;음성</a></li>
+                                    <li><a href="./blog-details.html">&nbsp;&nbsp;비디오</a></li>
+                                    <li><a href="./signup.html">&nbsp;&nbsp;기타도구</a></li>
+                                    <li><a href="./login.html">&nbsp;&nbsp;AI아바타</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">마켓<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./login.html">&nbsp;&nbsp;강의</a></li>
-                                    <li><a href="./categories.html">&nbsp;&nbsp;GPT각종봇</a></li>
+                                    <li><a href="./gptstore">&nbsp;&nbsp;GPT스토어</a></li>
                                     <li><a href="./blog-details.html">&nbsp;&nbsp;프롬프트</a></li>
                                     <li><a href="./anime-watching.html">&nbsp;스마트기기</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;NFT컨텐츠</a></li>
