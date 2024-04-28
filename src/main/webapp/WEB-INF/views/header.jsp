@@ -30,6 +30,8 @@
                                     <li><a href="/terms">&nbsp;&nbsp;AIWD약관</a></li>
                                     <li><a href="/memeberstatus">&nbsp;&nbsp;AIWD회원현황</a></li>
                                     <li><a href="https://ayaans-organization.gitbook.io/aiwdwhitepaper/">&nbsp;&nbsp;AIWD토큰백서</a></li>
+                                    <li><a href="https://somoim.friendscube.com/g/c9a3c5be-c800-11ee-b0b5-0ad2d97530c51">&nbsp;&nbsp;AIWD소모임어플가입</a></li>
+                                    <li><a href="https://open.kakao.com/o/gEw0Wlnf">&nbsp;&nbsp;AIWD오픈톡</a></li>
                                 </ul>
                             </li>
                             <li><a href="./categories.html">커뮤니티<span class="arrow_carrot-down"></span></a>
