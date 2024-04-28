@@ -19,6 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="<%= imageUrl %>">
     <meta property="og:description" content="<%= description %>">
+    <meta name="naver-site-verification" content="6e1a09765d57b7140ee07999e3bca4aac79f37d6" />
 
     <title>AIWD</title>
 

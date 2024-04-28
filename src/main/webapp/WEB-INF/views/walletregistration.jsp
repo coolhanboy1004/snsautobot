@@ -8,6 +8,7 @@
     <meta name="keywords" content="AI, GPT, DALLE, Stable-diffusion">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="6e1a09765d57b7140ee07999e3bca4aac79f37d6" />
     <title>Anime | Template</title>
 
     <!-- Google Font -->
