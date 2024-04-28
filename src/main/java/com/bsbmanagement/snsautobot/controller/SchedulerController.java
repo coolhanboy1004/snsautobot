@@ -38,8 +38,8 @@ public class SchedulerController {
     @GetMapping("/current-time")
     public ResponseEntity<?> getCurrentTime() {
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedNow = now.format(formatter);
+        // ISO 8601 형식으로 날짜와 시간을 포맷팅
+        String formattedNow = now.format(DateTimeFormatter.ISO_DATE_TIME);
         return ResponseEntity.ok(formattedNow);
     }
 }
