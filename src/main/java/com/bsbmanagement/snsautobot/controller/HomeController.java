@@ -51,6 +51,11 @@ public class HomeController {
         return "imagegallery"; //=> imagedetail.jsp 출력
     }
 
+    @GetMapping("/freeboard")
+    public String freeboard() {
+        return "freeboard"; //=> imagedetail.jsp 출력
+    }
+
     @GetMapping("/airpggame")
     public String airpggame() {
         return "airpggame"; //=> imagedetail.jsp 출력

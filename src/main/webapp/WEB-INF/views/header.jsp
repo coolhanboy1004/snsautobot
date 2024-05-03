@@ -30,7 +30,7 @@
                                     <li><a href="/terms">&nbsp;&nbsp;AIWD약관</a></li>
                                     <li><a href="/memeberstatus">&nbsp;&nbsp;AIWD회원현황</a></li>
                                     <li><a href="https://ayaans-organization.gitbook.io/aiwdwhitepaper/">&nbsp;&nbsp;AIWD토큰백서</a></li>
-                                    <li><a href="https://somoim.friendscube.com/g/c9a3c5be-c800-11ee-b0b5-0ad2d97530c51">&nbsp;&nbsp;AIWD소모임어플가입</a></li>
+                                    <li><a href="https://somoim.friendscube.com/g/c9a3c5be-c800-11ee-b0b5-0ad2d97530c51">&nbsp;&nbsp;AIWD소모임</a></li>
                                     <li><a href="https://open.kakao.com/o/gEw0Wlnf">&nbsp;&nbsp;AIWD오픈톡</a></li>
                                 </ul>
                             </li>
@@ -39,7 +39,7 @@
                                     <li><a href="#">&nbsp;&nbsp;채팅</a></li>
                                     <li><a href="/airpggame">&nbsp;&nbsp;AIRPGGAME</a></li>
                                     <li><a href="#">&nbsp;&nbsp;투표</a></li>
-                                    <li><a href="./categories.html">&nbsp;&nbsp;자유게시판</a></li>
+                                    <li><a href="./freeboard">&nbsp;&nbsp;자유게시판</a></li>
                                     <li><a href="./imagegallery">&nbsp;&nbsp;갤러리</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;질문&답변</a></li>
                                     <li><a href="./anime-details.html">&nbsp;&nbsp;회원사진</a></li>

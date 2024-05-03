@@ -71,6 +71,12 @@
       <version>4.5.13</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20210307</version>
+    </dependency>
+
     <!-- Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
