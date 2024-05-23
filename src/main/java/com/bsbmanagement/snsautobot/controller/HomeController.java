@@ -65,4 +65,9 @@ public class HomeController {
     public String gptstore() {
         return "gptstore"; //=> gptstore.jsp 출력
     }
+
+    @GetMapping("/privacy")
+    public String privacy() {
+        return "privacy"; //=> gptstore.jsp 출력
+    }
 }

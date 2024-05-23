@@ -126,6 +126,9 @@
 <!-- Include the Wallet Registration Popup -->
 <jsp:include page="popup/wallet_login_popup.jsp" />
 
+<!-- 여기에 footer.jsp를 포함 -->
+<jsp:include page="footer.jsp" />
+
 <script src="../resources/js/imagegrid.js"></script>
 <script src="../resources/js/wallet_login.js"></script>
 <script src="../resources/js/addmeetup.js"></script>

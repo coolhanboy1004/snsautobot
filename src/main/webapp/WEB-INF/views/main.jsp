@@ -730,6 +730,9 @@
 </div>
 <!-- Search model end -->
 
+<!-- 여기에 footer.jsp를 포함 -->
+<jsp:include page="footer.jsp" />
+
 <!-- Js Plugins -->
 <script src="../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>

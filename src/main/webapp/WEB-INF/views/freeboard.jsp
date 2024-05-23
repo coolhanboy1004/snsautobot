@@ -81,6 +81,12 @@
 </section>
 <!-- Freeboard Section End -->
 
+<!-- Include the Wallet Registration Popup -->
+<jsp:include page="popup/wallet_login_popup.jsp" />
+
+<!-- 여기에 footer.jsp를 포함 -->
+<jsp:include page="footer.jsp" />
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
 <script src="../resources/js/player.js"></script>
