@@ -348,6 +348,31 @@ ol {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* 👉 추가: container 스타일 */
+.header .container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 👉 추가: row 스타일 */
+.header .row {
+    display: flex;
+    align-items: center;
+}
+
+/* 👉 추가: 컬럼 스타일 */
+.col-lg-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+.col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
 .header__logo {
     padding: 20px 0 17px;
 }
@@ -360,14 +385,8 @@ ol {
     text-align: center;
 }
 
-.header .container {
-    position: relative;  /* 부모 요소에 relative 추가 */
-}
-
-/* 이 부분만 추가 */
+/* 👉 추가: nav 스타일 */
 .header__nav {
-    position: absolute;  /* absolute로 설정 */
-    top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -449,7 +468,7 @@ ol {
 
 .header__right {
     text-align: right;
-    padding: 30px 0 15px;
+    padding: 20px 0 15px;
 }
 
 .header__right a {
@@ -503,6 +522,14 @@ ol {
     height: 30px;
 }
 
+/* 👇 여기서부터 추가 */
+.container-fluid.mt-5 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* Responsive Styles */
 @media only screen and (max-width: 767px) {
     .header {
@@ -510,14 +537,30 @@ ol {
     }
 
     .header .container {
-        position: relative;
+        padding: 0 15px;
     }
 
+    .header .row {
+        flex-wrap: wrap;
+    }
+
+    /* 👉 추가: 모바일에서 컬럼 전체 너비로 */
+    .col-lg-2, .col-lg-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* 👉 수정: 로고 패딩 */
+    .header__logo {
+        padding: 15px 0;
+    }
+
+    /* 👉 수정: 우측 버튼 위치 조정 */
     .header__right {
         position: absolute;
-        right: 120px;
-        top: -42px;
-        padding: 0;
+        right: 110px;
+        top: -35px;
+        transform: translateY(-50%);
     }
 
     .header__menu {
@@ -578,11 +621,53 @@ ol {
 
     #walletTable {
         font-size: 0.9em;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
     }
 
+    /* 👉 추가: 테이블 셀 스타일 */
     #walletTable th,
     #walletTable td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         padding: 8px;
+    }
+
+
+    /* 상대적 너비 사용 */
+    #walletTable th:nth-child(1),
+    #walletTable td:nth-child(1) {  /* No 열 */
+        width: 10%;
+    }
+
+    #walletTable th:nth-child(2),
+    #walletTable td:nth-child(2) {  /* RANKS 열 */
+        width: 15%;
+    }
+
+    #walletTable th:nth-child(3),
+    #walletTable td:nth-child(3) {  /* Nickname 열 */
+        width: 20%;
+    }
+
+    #walletTable th:nth-child(4),
+    #walletTable td:nth-child(4) {  /* Wallet 열 */
+        width: 35%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #walletTable th:nth-child(5),
+    #walletTable td:nth-child(5) {  /* Token Balance 열 */
+        width: 20%;
+        text-align: right;
+    }
+
+    .container-fluid.mt-5 {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-top: 1rem !important;
     }
 
     .rank-icon {

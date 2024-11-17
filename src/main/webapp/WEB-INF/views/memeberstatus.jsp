@@ -42,7 +42,7 @@
 
 <jsp:include page="header.jsp" />
 
-<div class="container mt-5">
+<div class="container-fluid mt-5">
     <div class="row">
         <div class="col-12">
             <h5 class="mb-4">Member status</h5>
