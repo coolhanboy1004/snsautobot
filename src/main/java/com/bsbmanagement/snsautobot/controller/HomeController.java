@@ -70,4 +70,9 @@ public class HomeController {
     public String privacy() {
         return "privacy"; //=> gptstore.jsp 출력
     }
+
+    @GetMapping("/LicenseKeyIssuance")
+    public String LicenseKeyIssuance() {
+        return "LicenseKeyIssuance"; //=> gptstore.jsp 출력
+    }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LicenseKey">
+    <resultMap id="licenseKeyResultMap" type="licensekey">
+        <id property="id" column="id"/>
+        <result property="licenseKey" column="license_key"/>
+        <result property="useCount" column="use_count"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="machineId" column="machine_id"/>
+        <result property="authenticatedAt" column="authenticated_at"/>
+        <result property="expirationDate" column="expiration_date"/>
+    </resultMap>
+
+    <select id="findByKey" resultMap="licenseKeyResultMap">
+        SELECT * FROM license_keys WHERE license_key = #{licenseKey}
+    </select>
+
+    <update id="incrementUseCount">
+        UPDATE license_keys
+        SET use_count = use_count + 1,
+            authenticated_at = CURRENT_DATE,
+            expiration_date = DATE_ADD(CURRENT_DATE, INTERVAL 30 DAY),
+            machine_id = #{machineId}
+        WHERE license_key = #{licenseKey}
+    </update>
+
+    <select id="findByMachineId" resultMap="licenseKeyResultMap">
+        SELECT * FROM license_keys WHERE machine_id = #{machineId}
+    </select>
+</mapper>
