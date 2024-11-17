@@ -1,3 +1,26 @@
 # Project exclude paths
 /out/
 /target/
+
+# Environment Variables
+.env
+
+# IDE files
+.idea/
+*.iml
+
+# Compiled files
+*.class
+*.jar
+*.war
+
+# Logs
+*.log
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
