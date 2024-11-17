@@ -490,30 +490,49 @@ ol {
   Member Status Table
 -----------------------*/
 
+/* 기본 테이블 스타일 */
 #walletTable {
+    font-size: 0.9em;
     width: 100%;
+    table-layout: fixed; /* 추가: 고정 너비 레이아웃 */
     border-collapse: collapse;
-    margin: 20px 0;
-    background: #ffffff;
 }
 
-#walletTable th {
-    background: #f5f5f5;
-    color: #333333;
-    padding: 12px;
+#walletTable th,
+#walletTable td {
+    color: #333333 !important; /* 검정색으로 강제 적용 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* 또는 헤더만 따로 스타일링 */
+#walletTable thead th {
+    color: #333333 !important;
+    background-color: #f5f5f5;
     font-weight: bold;
     text-align: left;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-#walletTable td {
-    padding: 12px;
-    color: #333333;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 #walletTable tr:hover {
     background-color: #f8f8f8;
+}
+
+/* 열 너비 설정 */
+.no-cell { width: 10%; }
+.rank-cell { width: 15%; text-align: center; }
+.nickname-cell { width: 20%; }
+.wallet-cell {
+    width: 35%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.balance-cell {
+    width: 20%;
+    text-align: right;
 }
 
 /* Rank Icons */
@@ -620,9 +639,11 @@ ol {
     }
 
     #walletTable {
-        font-size: 0.9em;
-        width: 100%;
-        -webkit-overflow-scrolling: touch;
+        font-size: 0.8em;
+    }
+
+    .wallet-cell {
+        max-width: 100px;
     }
 
     /* 👉 추가: 테이블 셀 스타일 */
@@ -670,9 +691,11 @@ ol {
         margin-top: 1rem !important;
     }
 
+    /* 이미지 크기 조정 */
     .rank-icon {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
     }
 }
 

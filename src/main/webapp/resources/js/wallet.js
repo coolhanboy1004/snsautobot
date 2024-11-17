@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    // 스타일 적용을 위한 클래스 추가
+    $('#walletTable').addClass('responsive-table');
+
     $.ajax({
         url: "/getWalletList",
         type: "GET",
@@ -8,28 +11,27 @@ $(document).ready(function() {
 
             if (walletList && walletList.length) {
                 walletList.forEach(function(wallet, index) {
-                    // Determine which image to use
                     var iconImage;
                     if (index === 0) {
                         iconImage = "../resources/img/crown1.png";
-                    } else if (index >= 1 && index <= 4) {  // 2번부터 5번까지
+                    } else if (index >= 1 && index <= 4) {
                         iconImage = "../resources/img/crown2.png";
-                    } else {  // 6번부터는 아이콘 없음
+                    } else {
                         iconImage = null;
                     }
 
-                    // Add a row with the number, icon (if available), and nickname
+                    // 각 셀에 클래스 추가
                     tableBody.append(
                         "<tr data-address='" + wallet.wallet_address + "'>" +
-                        "<td>" + (index + 1) + "</td>" +
-                        (iconImage ? "<td><img src='" + iconImage + "' alt='Rank Icon' class='rank-icon' /></td>" : "<td></td>") +  // If iconImage is null, add an empty cell
-                        "<td>" + wallet.nickname + "</td>" +
-                        "<td title='" + wallet.wallet_address + "'>" + wallet.wallet_address + "</td>" +
-                        "<td class='balance'>0</td>" +
+                        "<td class='no-cell'>" + (index + 1) + "</td>" +
+                        "<td class='rank-cell'>" + (iconImage ? "<img src='" + iconImage + "' alt='Rank Icon' class='rank-icon' />" : "") + "</td>" +
+                        "<td class='nickname-cell'>" + wallet.nickname + "</td>" +
+                        "<td class='wallet-cell' title='" + wallet.wallet_address + "'>" + wallet.wallet_address + "</td>" +
+                        "<td class='balance-cell balance'>0</td>" +
                         "</tr>"
                     );
 
-                    // Fetch balance for the wallet
+                    // Balance 업데이트
                     $.ajax({
                         url: "http://localhost:3000/getTokenBalance/" + wallet.wallet_address,
                         type: "GET",
@@ -39,8 +41,6 @@ $(document).ready(function() {
                         }
                     });
                 });
-            } else {
-                console.warn("No wallets found or invalid data structure.");
             }
         },
         error: function(error) {
@@ -48,4 +48,3 @@ $(document).ready(function() {
         }
     });
 });
-

@@ -50,7 +50,7 @@
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th>RANKS</th> <!-- Icon 컬럼 추가 -->
+                    <th>RANKS</th>
                     <th>Nickname</th>
                     <th>Wallet</th>
                     <th>Token Balance</th>
