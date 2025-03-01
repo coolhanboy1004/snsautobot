@@ -9,7 +9,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.net.URL;

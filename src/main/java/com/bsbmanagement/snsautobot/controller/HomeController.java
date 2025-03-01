@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
+    @SuppressWarnings("unused")
     @Autowired
     private BlogTitleService blogTitleService;
 

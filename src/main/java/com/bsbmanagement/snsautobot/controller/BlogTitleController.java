@@ -4,7 +4,6 @@ import com.bsbmanagement.snsautobot.dto.BlogTitleDTO;
 import com.bsbmanagement.snsautobot.service.BlogTitleService;
 import com.bsbmanagement.snsautobot.service.UserWalletService;
 import com.bsbmanagement.snsautobot.dto.UserWalletDTO;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
