@@ -1,3 +1,6 @@
+# Spring Boot 민감한 설정 파일
+src/main/resources/application.properties
+
 # Project exclude paths
 /out/
 /target/
