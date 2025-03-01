@@ -29,7 +29,7 @@ public class SavedDalleImgFileController {
     public ResponseEntity<String> generateDalleImage(@RequestParam("prompt") String prompt, @RequestParam("sender") String sender) {
         try {
             // 작업 수행
-            String baseUrl = "http://aiwd.kro.kr/imagegallery";
+            String baseUrl = "https://aiwd.kro.kr/imagegallery";
             String imageUrl = callDallE3API(prompt);
             String savedImagePath = saveImageFromUrl(imageUrl);
             String fullUrl = createFullUrlFromPath(savedImagePath);
@@ -59,7 +59,7 @@ public class SavedDalleImgFileController {
     private String callDallE3API(String prompt) throws IOException {
         // API 엔드포인트 및 요청 데이터 설정
         String apiEndpoint = "https://api.openai.com/v1/images/generations";
-        String apiKey = System.getenv("OPENAI_API_KEY"); // 실제 API 키 입력
+        String apiKey = "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"; // 실제 API 키 입력
 
         // REST Template을 사용하여 DALL-E 3 API 호출
         RestTemplate restTemplate = new RestTemplate();
