@@ -101,6 +101,8 @@ $(document).ready(function() {
 
                 var formattedPrice = Math.floor(meetup.price);
 
+                var formattedDate = new Date(meetup.date).toLocaleDateString();
+
                 var meetupElement = `
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                         <div class="meetup-item">
@@ -109,7 +111,7 @@ $(document).ready(function() {
                             </div>
                             <div class="meetup-content">
                                 <h5><a href="#">${meetup.name}</a></h5>
-                                <p>Date: ${meetup.date}</p>
+                                <p>Date: ${formattedDate}</p>
                                 <p>Time: ${meetup.time}</p>
                                 <p>Organized by: ${meetup.organizerNickname}</p>
                                 <p>Location: ${meetup.locationName}</p>

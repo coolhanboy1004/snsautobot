@@ -2,10 +2,81 @@
 <%@ page import="javax.servlet.http.HttpSession" %>
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="ko">
+<head>
+<style>
+    .user-profile-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .user-profile-image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    
+    .user-info-dropdown {
+        position: relative;
+    }
+    
+    .user-name {
+        color: #000000;
+        font-size: 14px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1d1e39;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+    
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #2a2b57;
+    }
+    
+    .logout-btn {
+        background: none;
+        border: none;
+        color: #000000;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        background-color: #ffffff;
+        padding: 6px 12px;
+        border-radius: 4px;
+        margin-left: 10px;
+    }
+    
+    .logout-btn img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+</style>
+</head>
 
 <%
     String loggedInUser = (String) session.getAttribute("loggedInUser");
+    String userPicture = (String) session.getAttribute("userPicture");
+    String walletAddress = (String) session.getAttribute("walletAddress");
 %>
 <script>
     var loggedInUserNickname = '<%= loggedInUser %>';
@@ -103,12 +174,30 @@
             <div class="col-lg-2">
                 <div class="header__right">
                     <% if (loggedInUser != null) { %>
-                    <div style="display: flex; align-items: center;">
-                        <p style="color: white; font-size: small; margin-right: 10px;"><%= loggedInUser %> 님</p>
-                        <a href="#" title="Logout" onclick="logoutUser(); return false;"><img src="../resources/img/logout-icon.png" alt="로그아웃" style="width: 20px; height: 20px; margin-bottom: 15px;"  ></a>
+                    <div class="user-profile-container">
+                        <% if (userPicture != null) { %>
+                            <img src="<%= userPicture %>" alt="프로필" class="user-profile-image">
+                        <% } %>
+                        <div class="user-info-dropdown">
+                            <span class="user-name"><%= loggedInUser %></span>
+                            <button class="logout-btn" onclick="logoutUser()">
+                                <img src="../resources/img/logout-icon.png" alt="로그아웃">
+                                로그아웃
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#">내 프로필</a>
+                                <a href="#">설정</a>
+                                <a href="#" onclick="logoutUser(); return false;">로그아웃</a>
+                            </div>
+                        </div>
                     </div>
                     <% } else { %>
-                    <button id="walletIcon"><span class="icon_wallet"></span></button>
+                    <div class="login-buttons" style="display: flex; align-items: center;">
+                        <button id="walletIcon" style="background: none; border: none; margin-right: 10px;"><span class="icon_wallet"></span></button>
+                        <button id="googleLoginBtn" style="background: none; border: none; display: flex; align-items: center; padding: 6px 12px; background-color: #ffffff; border-radius: 4px; cursor: pointer;">
+                            <img src="../resources/img/google_login_btn.png" alt="구글 로그인" style="width: 40px; height: 40px; margin-right: 8px;">
+                        </button>
+                    </div>
                     <% } %>
                 </div>
             </div>
@@ -133,6 +222,27 @@
                 item.classList.add('active');
             }
         });
+        
+        // 사용자 드롭다운 메뉴 기능 추가
+        const userNameElement = document.querySelector('.user-name');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        
+        if (userNameElement && dropdownContent) {
+            userNameElement.addEventListener('click', function() {
+                if (dropdownContent.style.display === 'none' || !dropdownContent.style.display) {
+                    dropdownContent.style.display = 'block';
+                } else {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+            
+            // 다른 곳을 클릭하면 드롭다운 메뉴 닫기
+            document.addEventListener('click', function(event) {
+                if (!event.target.matches('.user-name') && !event.target.closest('.dropdown-content')) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        }
     });
 
     function showOpenTalkPassword(event) {
@@ -141,3 +251,4 @@
         window.open("https://open.kakao.com/o/gcsw0uvg", "_blank");
     }
 </script>
+<script src="../resources/js/google_login.js"></script>

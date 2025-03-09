@@ -522,7 +522,7 @@ ol {
 
 /* 열 너비 설정 */
 .no-cell { width: 10%; }
-.rank-cell { width: 15%; text-align: center; }
+.rank-cell { width: 15%; text-align: left; }
 .nickname-cell { width: 20%; }
 .wallet-cell {
     width: 35%;
@@ -532,7 +532,7 @@ ol {
 
 .balance-cell {
     width: 20%;
-    text-align: right;
+    text-align: left;
 }
 
 /* Rank Icons */

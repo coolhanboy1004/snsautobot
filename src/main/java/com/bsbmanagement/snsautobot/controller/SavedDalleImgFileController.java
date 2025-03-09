@@ -57,12 +57,20 @@ public class SavedDalleImgFileController {
 
     private String callDallE3API(String prompt) throws IOException {
         // API 엔드포인트 및 요청 데이터 설정
-        String apiEndpoint = "https://api.openai.com/v1/images/generations";
-        String apiKey = System.getenv("OPENAI_API_KEY"); // 실제 API 키 입력
+        String apiEndpoint = "https://api.together.xyz/v1/images/generations";
+        String apiKey = System.getenv("TOGETHER_API_KEY"); // Together API 키
 
-        // REST Template을 사용하여 DALL-E 3 API 호출
+        // REST Template을 사용하여 Together API 호출
         RestTemplate restTemplate = new RestTemplate();
-        String requestJson = "{\"model\":\"dall-e-3\",\"prompt\":\"" + prompt + "\",\"n\":1,\"size\":\"1024x1024\"}";
+
+        // 요청 JSON 구성 - 참조 코드를 바탕으로 구성
+        String requestJson = "{"
+                + "\"model\":\"black-forest-labs/FLUX.1-schnell\","  // 모델명 수정
+                + "\"prompt\":\"" + prompt + "\","
+                + "\"steps\":4,"  // steps 값 4로 설정
+                + "\"disable_safety_checker\":true"  // safety checker 비활성화
+                + "}";
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Authorization", "Bearer " + apiKey);
@@ -71,7 +79,7 @@ public class SavedDalleImgFileController {
         ResponseEntity<String> response = restTemplate.postForEntity(apiEndpoint, entity, String.class);
 
         // API 응답에서 이미지 URL 추출
-        String imageUrl = extractImageUrlFromResponse(response.getBody());
+        String imageUrl = extractImageUrlFromTogetherResponse(response.getBody());
         return imageUrl;
     }
 
@@ -90,6 +98,14 @@ public class SavedDalleImgFileController {
         }
 
         return targetPath.toString();
+    }
+
+    // Together API 응답에서 이미지 URL 추출하는 메소드
+    private String extractImageUrlFromTogetherResponse(String responseBody) {
+        JSONObject responseJson = new JSONObject(responseBody);
+        // Python 코드의 response.data[0].url 참조하여 구현
+        String extractedUrl = responseJson.getJSONArray("data").getJSONObject(0).getString("url");
+        return extractedUrl;
     }
 
     private String extractImageUrlFromResponse(String responseBody) {

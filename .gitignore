@@ -1,5 +1,6 @@
 # Spring Boot 민감한 설정 파일
 src/main/resources/application.properties
+src/main/resources/oauth_config.txt
 
 # Project exclude paths
 /out/

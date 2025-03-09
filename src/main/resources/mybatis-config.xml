@@ -6,6 +6,7 @@
         <typeAlias type="com.bsbmanagement.snsautobot.dto.BlogTitleDTO" alias="blogtitle"/>
         <typeAlias type="com.bsbmanagement.snsautobot.dto.MeetupDTO" alias="meetup"/>
         <typeAlias type="com.bsbmanagement.snsautobot.dto.UserWalletDTO" alias="userwallet"/>
+        <typeAlias type="com.bsbmanagement.snsautobot.dto.UserDTO" alias="user"/>
         <typeAlias type="com.bsbmanagement.snsautobot.dto.ImageGalleryDTO" alias="imagegallery"/>
         <typeAlias type="com.bsbmanagement.snsautobot.dto.LicenseKeyDTO" alias="licensekey"/>
     </typeAliases>
